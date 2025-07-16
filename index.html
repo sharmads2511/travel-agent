@@ -226,74 +226,157 @@
                 localized_texts.webchatLoadingPaneSubTitle = "Soutien par clavardage en direct!";
                 localized_texts.webchatLoadingPaneSpinnerText = "Chargement\u2026";
             }
-
             return {
                 styleProps: {
                     generalStyles: {
-                        width: "360px",
-                        height: "560px",
-                        bottom: "20px",
-                        right: "20px"
+                        width: "400px",
+                        height: "500px",
+                        borderRadius: "10px 10px 10px 10px", // To set the border radius of chatbot widget
                     }
                 },
                 headerProps: {
                     styleProps: {
-                        generalStyleProps: {
-                            background: "#399e46"
-                        },
-                        titleStyleProps: {
-                            color: "#FFFFFF"
-                        },
-                        minimizeButtonStyleProps: {
-                            color: "#FFFFFF"
-                        },
-                        closeButtonStyleProps: {
-                            color: "#FFFFFF"
+                        generalStyleProps: { //Overall styles of the Header component, including the container
+                            borderRadius: "10px 10px 0 0"
                         }
-                    },
-                    controlProps: {
-                        headerTitleProps: {
-                            text: localized_texts.webchatTitle
-                        },
-                        hideIcon: false,
-                        hideTitle: false,
-                        headerIconProps: {
-                            src: "https://www.svgrepo.com/show/474732/assistant.svg",
-                            alt: "Discutons"
-                        }
-                    }
-                },
-                loadingPaneProps: {
-                    styleProps: {
-                        generalStyleProps: {
-                            background: "#399e46"
-                        }
-                    },
-                    controlProps: {
-                        titleText: localized_texts.webchatLoadingPaneTitle,
-                        subtitleText: localized_texts.webchatLoadingPaneSubTitle,
-                        spinnerText: localized_texts.webchatLoadingPaneSpinnerText,
-                        hideSpinnerText: false,
-                        spinnerSize: 3,
                     }
                 },
                 chatButtonProps: {
                     controlProps: {
-                        hideChatTextContainer: true,
-                        hideChatSubtitle: true,
-                        titleText: localized_texts.webchatChatButton,
+                        hideChatTextContainer: true //To hide the text container (containing title and subtitle) on the chat button
+                    },
+                    styleProps: {
+                        generalStyleProps: { //Overall styles of the ChatButton component, including the container
+                            minWidth: "60px",
+                            width: "60px",
+                            height: "60px"
+                        }
                     }
                 },
-                confirmationPaneProps: {
-                    controlProps: {
-                        titleText: localized_texts.webchatAlertTitle,
-                        subtitleText: localized_texts.webchatAlertMessage,
-                        brightnessValueOnDim: "0.2",
-                        confirmButtonText: localized_texts.webchatYesButton,
-                        cancelButtonText: localized_texts.webchatNoButton,
+                webChatContainerProps: {
+                    adaptiveCardStyles: { //Sets certain style options of adaptive cards rendered inside WebChat.
+                        background: "black",
+                        color: "white",
+                        anchorColor: "blue"
+                    },
+                    webChatStyles: { //The set of styles exposed by the WebChat component
+                        avatarSize: 0,
+                        suggestedActionBackgroundColor: "black",
+                        suggestedActionBorderColor: "black",
+                        //suggestedActionTextColor: "white",
+                        //suggestedActionLayout: "stacked" // "stacked","flow"
+                    },
+                    renderingMiddlewareProps: {
+                        disableAvatarMiddleware: true, //Whether to disable the use of AvatarMiddleware
+                        // avatarStyleProps: { //Styles for the agent side avatar
+                        //     backgroundImage: "url('https://cdn.yellowmessenger.com/rFMPH3tvScFe1646290211436.png')",
+                        //     backgroundSize: "cover"
+                        // },
+                        avatarTextStyleProps: {
+                            display: "none" //Styles for the agent side initials
+                        }
+                        // userMessageStyleProps: { //Styles for the user messages
+                        //     fontSize: "20px"
+                        // },
+                        // systemMessageStyleProps: { //Styles for the system messages
+                        //     fontSize: "20px"
+                        // }
                     }
+                },
+                loadingPaneProps: {
+                    controlProps: { //Properties that control the element behaviors
+                        titleText: "Hello there!",
+                        subtitleText: "Please wait",
+                        hideSpinnerText: true,
+                        spinnerSize: 3
+                    },
+                },
+
+                footerProps: {
+                    controlProps: {
+                        hideEmailTranscriptButton: false, //To hide the email transcript button on the footer
+                        hideAudioNotificationButton: true, //To hide the audio notification button on the footer
+                        rightGroup: { //Additional custom components to be added on the right side of the footer (left of the default sub-components)
+                            children: ["© Microsoft 2023"
+                                // "props":{"style":{"fontSize":"12px","fontFamily":"Bradley Hand,cursive","padding":"2px"},
+                                // children:"© Microsoft 2023"
+                                //<Copyright />
+                                //<div style={{ "fontSize": "12px", "fontFamily": "Segoe UI, Arial", "padding": "2px" }}>© Microsoft 2023</div>
+                                // Since this is a static element, alternatively we can use the string format:
+                                //'{"$$typeof":"$$Symbol:react.element","type":"div","key":"1","ref":null,"props":{"style":{"fontSize":"12px","fontFamily":"Bradley Hand,cursive","padding":"2px"},"children":"},"_owner":null,"_store":{}}'
+                            ]
+                        }
+                    },
                 }
-            };
+            }
+
+            // return {
+            //     styleProps: {
+            //         generalStyles: {
+            //             width: "360px",
+            //             height: "560px",
+            //             bottom: "20px",
+            //             right: "20px"
+            //         }
+            //     },
+            //     headerProps: {
+            //         styleProps: {
+            //             generalStyleProps: {
+            //                 background: "#399e46"
+            //             },
+            //             titleStyleProps: {
+            //                 color: "#FFFFFF"
+            //             },
+            //             minimizeButtonStyleProps: {
+            //                 color: "#FFFFFF"
+            //             },
+            //             closeButtonStyleProps: {
+            //                 color: "#FFFFFF"
+            //             }
+            //         },
+            //         controlProps: {
+            //             headerTitleProps: {
+            //                 text: localized_texts.webchatTitle
+            //             },
+            //             hideIcon: false,
+            //             hideTitle: false,
+            //             headerIconProps: {
+            //                 src: "https://www.svgrepo.com/show/474732/assistant.svg",
+            //                 alt: "Discutons"
+            //             }
+            //         }
+            //     },
+            //     loadingPaneProps: {
+            //         styleProps: {
+            //             generalStyleProps: {
+            //                 background: "#399e46"
+            //             }
+            //         },
+            //         controlProps: {
+            //             titleText: localized_texts.webchatLoadingPaneTitle,
+            //             subtitleText: localized_texts.webchatLoadingPaneSubTitle,
+            //             spinnerText: localized_texts.webchatLoadingPaneSpinnerText,
+            //             hideSpinnerText: false,
+            //             spinnerSize: 3,
+            //         }
+            //     },
+            //     chatButtonProps: {
+            //         controlProps: {
+            //             hideChatTextContainer: true,
+            //             hideChatSubtitle: true,
+            //             titleText: localized_texts.webchatChatButton,
+            //         }
+            //     },
+            //     confirmationPaneProps: {
+            //         controlProps: {
+            //             titleText: localized_texts.webchatAlertTitle,
+            //             subtitleText: localized_texts.webchatAlertMessage,
+            //             brightnessValueOnDim: "0.2",
+            //             confirmButtonText: localized_texts.webchatYesButton,
+            //             cancelButtonText: localized_texts.webchatNoButton,
+            //         }
+            //     }
+            // };
         }
     </script>
 
