@@ -202,30 +202,30 @@
         //Styling function
         function lcw() {
             // Default as Engligh
-            let localized_texts = {
-                webchatTitle: "Virtual Assistant",
-                webchatChatButton: "Chat",
-                webchatAlertTitle: "Are you sure you want to exit the chat?",
-                webchatAlertMessage: "Note: This will end your conversation, and you will lose your chat history.",
-                webchatNoButton: "No",
-                webchatYesButton: "Yes",
-                webchatLoadingPaneTitle: "Welcome to",
-                webchatLoadingPaneSubTitle: "Live Chat Support!",
-                webchatLoadingPaneSpinnerText: "Loading\u2026",
-            }
-            // check condition for language
-            if (true) {
-                //French Translations
-                localized_texts.webchatTitle = "Assistant virtuel";
-                localized_texts.webchatChatButton = "Clavarder";
-                localized_texts.webchatAlertTitle = "\u00CAtes-vous certain de vouloir quitter la s\u00E9ance de clavardage?";
-                localized_texts.webchatAlertMessage = "Note\u202F: Cela mettra fin \u00E0 la conversation et vous perdrez votre historique de clavardage.";
-                localized_texts.webchatNoButton = "Non";
-                localized_texts.webchatYesButton = "Oui";
-                localized_texts.webchatLoadingPaneTitle = "Bienvenue au";
-                localized_texts.webchatLoadingPaneSubTitle = "Soutien par clavardage en direct!";
-                localized_texts.webchatLoadingPaneSpinnerText = "Chargement\u2026";
-            }
+            // let localized_texts = {
+            //     webchatTitle: "Virtual Assistant",
+            //     webchatChatButton: "Chat",
+            //     webchatAlertTitle: "Are you sure you want to exit the chat?",
+            //     webchatAlertMessage: "Note: This will end your conversation, and you will lose your chat history.",
+            //     webchatNoButton: "No",
+            //     webchatYesButton: "Yes",
+            //     webchatLoadingPaneTitle: "Welcome to",
+            //     webchatLoadingPaneSubTitle: "Live Chat Support!",
+            //     webchatLoadingPaneSpinnerText: "Loading\u2026",
+            // }
+            // // check condition for language
+            // if (true) {
+            //     //French Translations
+            //     localized_texts.webchatTitle = "Assistant virtuel";
+            //     localized_texts.webchatChatButton = "Clavarder";
+            //     localized_texts.webchatAlertTitle = "\u00CAtes-vous certain de vouloir quitter la s\u00E9ance de clavardage?";
+            //     localized_texts.webchatAlertMessage = "Note\u202F: Cela mettra fin \u00E0 la conversation et vous perdrez votre historique de clavardage.";
+            //     localized_texts.webchatNoButton = "Non";
+            //     localized_texts.webchatYesButton = "Oui";
+            //     localized_texts.webchatLoadingPaneTitle = "Bienvenue au";
+            //     localized_texts.webchatLoadingPaneSubTitle = "Soutien par clavardage en direct!";
+            //     localized_texts.webchatLoadingPaneSpinnerText = "Chargement\u2026";
+            // }
             return {
                 styleProps: {
                     generalStyles: {
@@ -386,15 +386,15 @@
         window.lcw = function () {
             const cfg = _origLcw();
             if (window.currentLanguage !== "fr") {       // need English
-                cfg.headerProps.controlProps.headerTitleProps.text = "Virtual Assistant";
-                cfg.loadingPaneProps.controlProps.titleText = "Welcome to";
-                cfg.loadingPaneProps.controlProps.subtitleText = "Live Chat Support!";
-                cfg.loadingPaneProps.controlProps.spinnerText = "Loading…";
-                cfg.chatButtonProps.controlProps.titleText = "Chat";
-                cfg.confirmationPaneProps.controlProps.titleText = "Are you sure you want to exit the chat?";
-                cfg.confirmationPaneProps.controlProps.subtitleText = "Note: This will end your conversation, and you will lose your chat history.";
-                cfg.confirmationPaneProps.controlProps.confirmButtonText = "Yes";
-                cfg.confirmationPaneProps.controlProps.cancelButtonText = "No";
+                // cfg.headerProps.controlProps.headerTitleProps.text = "Virtual Assistant";
+                // cfg.loadingPaneProps.controlProps.titleText = "Welcome to";
+                // cfg.loadingPaneProps.controlProps.subtitleText = "Live Chat Support!";
+                // cfg.loadingPaneProps.controlProps.spinnerText = "Loading…";
+                // cfg.chatButtonProps.controlProps.titleText = "Chat";
+                // cfg.confirmationPaneProps.controlProps.titleText = "Are you sure you want to exit the chat?";
+                // cfg.confirmationPaneProps.controlProps.subtitleText = "Note: This will end your conversation, and you will lose your chat history.";
+                // cfg.confirmationPaneProps.controlProps.confirmButtonText = "Yes";
+                // cfg.confirmationPaneProps.controlProps.cancelButtonText = "No";
             }
             return cfg;
         };
